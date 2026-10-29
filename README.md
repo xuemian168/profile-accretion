@@ -4,8 +4,8 @@
 
 ### Code and data for *Growing Clusters Lower the Bar: Profile Accretion in LLM-Based Incremental Entity Resolution*
 
-Huixue Han · Yu-Chu Tian\*
-School of Computer Science, Queensland University of Technology
+Huixue Han<sup>1</sup> · Shangzhi Xu<sup>2</sup> · Yu-Chu Tian<sup>1,\*</sup>
+<sup>1</sup>School of Computer Science, Queensland University of Technology · <sup>2</sup>Independent Researcher
 
 [![Paper](https://img.shields.io/badge/paper-MiTA%202027-1f6feb)](#citation)
 [![Code: MIT](https://img.shields.io/badge/code-MIT-2da44e)](LICENSE)
@@ -133,7 +133,7 @@ Details are in [`DATA_LICENSE.md`](DATA_LICENSE.md). Please cite FOPPA (Potin et
 ```bibtex
 @inproceedings{han2027accretion,
   title     = {Growing Clusters Lower the Bar: Profile Accretion in {LLM}-Based Incremental Entity Resolution},
-  author    = {Han, Huixue and Tian, Yu-Chu},
+  author    = {Han, Huixue and Xu, Shangzhi and Tian, Yu-Chu},
   booktitle = {Proceedings of MiTA 2027},
   year      = {2027},
   note      = {Submitted}
