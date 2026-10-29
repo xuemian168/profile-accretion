@@ -451,8 +451,17 @@ for m in MODELS:
     r = sa[sa.model == m].iloc[0]
     L.append(f" & soft audit & {p1(r.precision)} & {p1(r.recall)} & {p1(r.f1)} & {p1(r.mixed_share)} & {r.calls_per_record:.2f} \\\\")
 open(f"{GEN}/supp_fix_reps.tex", "w").write("\n".join(L) + "\n")
-# supplementary figure: precision-recall operating points
+# figure style shared by every figure (serif to match the IEEE text)
 import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as _plt
+STYLE = {"font.family": "serif", "font.serif": ["Times New Roman", "Times", "DejaVu Serif"], "font.size": 8,
+         "axes.titlesize": 8, "axes.labelsize": 8, "xtick.labelsize": 6.5, "ytick.labelsize": 6.5,
+         "legend.fontsize": 6.5, "axes.spines.top": False, "axes.spines.right": False, "axes.linewidth": .6,
+         "xtick.major.width": .6, "ytick.major.width": .6, "xtick.major.size": 2.5, "ytick.major.size": 2.5,
+         "pdf.fonttype": 42, "ps.fonttype": 42, "mathtext.fontset": "stix"}
+_plt.rcParams.update(STYLE)
+def ygrid(ax): ax.grid(axis="y", color="0.9", lw=.5, zorder=0); ax.set_axisbelow(True)
+def tick2(m): a, b = SH(m).rsplit("-", 1); return f"{a}\n{b}"   # 'Qwen2.5-7B' -> 'Qwen2.5' / '7B'
+# supplementary figure: precision-recall operating points
 PRP = pd.read_csv(f"{FX}/sweep/pr_points.csv")
 fig, axes = _plt.subplots(2, 3, figsize=(7.2, 4.6), sharex=False, sharey=True)
 sty = {"anchor_global": ("founding member, global $t$", "#7f7f7f", "s"), "profile_global": ("whole profile, global $t$", "#1f77b4", "o"), "profile_cal": ("whole profile, size-calibrated $\\tau$", "#d62728", "^")}
@@ -462,10 +471,10 @@ for ax, m in zip(axes.ravel(), MODELS):
         ax.plot(100 * x.recall, 100 * x.precision, marker=mk, color=col, ms=3.5, lw=1, label=lab)
     r = CVO.set_index("model").loc[m]
     ax.plot(100 * r.profile_recall, 100 * r.profile_precision, marker="*", color="black", ms=8, ls="none", label="cross-validated profile point")
-    ax.set_title(SH(m), fontsize=8); ax.tick_params(labelsize=7); ax.set_ylim(55, 100)
+    ax.set_title(SH(m), fontsize=8); ax.tick_params(labelsize=7); ax.set_ylim(55, 100); ax.grid(color="0.92", lw=.5); ax.set_axisbelow(True)
 for ax in axes[1]: ax.set_xlabel("pairwise recall (%)", fontsize=8)
 for ax in axes[:, 0]: ax.set_ylabel("pairwise precision (%)", fontsize=8)
-h, l = axes[0, 0].get_legend_handles_labels(); fig.legend(h, l, loc="lower center", ncol=4, fontsize=6.5, frameon=False)
+h, l = axes[0, 0].get_legend_handles_labels(); fig.legend(h, l, loc="lower center", ncol=4, fontsize=7, frameon=False)
 fig.tight_layout(rect=(0, 0.06, 1, 1)); fig.savefig(f"{FIG}/figS1_operating_points.pdf"); fig.savefig(f"{FIG}/figS1_operating_points.png", dpi=200)
 # ---------------------------------------------------------------- robustness checks, set 1
 RV = f"{DER}/review"
@@ -595,58 +604,94 @@ for m in MODELS:
 open(f"{GEN}/tab_mitig.tex", "w").write("\n".join(lines) + "\n")
 
 # ---------------------------------------------------------------- figures
-plt.rcParams.update({"font.family": "serif", "font.serif": ["Times New Roman", "Times", "DejaVu Serif"], "font.size": 8,
-                     "axes.titlesize": 8, "axes.labelsize": 8, "xtick.labelsize": 6.5, "ytick.labelsize": 6.5,
-                     "legend.fontsize": 6.5, "axes.spines.top": False, "axes.spines.right": False, "axes.linewidth": .6,
-                     "pdf.fonttype": 42, "ps.fonttype": 42, "mathtext.fontset": "stix"})
+plt.rcParams.update(STYLE)
 def letter(ax, s): ax.text(-0.16, 1.06, s, transform=ax.transAxes, fontweight="bold", fontsize=9, va="bottom")
 def logk(ax):
     ax.set_xscale("log", base=2); ax.set_xticks(KS); ax.set_xticklabels([str(k) for k in KS]); ax.minorticks_off()
     ax.set_xlim(0.85, 19); ax.set_xlabel("profile size $k$ (verified members)")
 
-fig, axes = plt.subplots(1, 3, figsize=(7.16, 2.5), gridspec_kw={"width_ratios": [1, 1, 1.05]})
-ax = axes[0]
-for m in MODELS:
-    c = C[C.model == m]; ax.plot(c.k, c.fmr, marker=MKM[m], ls="-", color=COL[m], ms=3.2, lw=1.2, label=SHORT[m])
-    ax.plot(c.k, c.fmr_or, ":", color=COL[m], lw=1.0)
-ax.set_ylim(0, 0.5); ax.set_ylabel("share of hard negatives\njudged the same entity"); logk(ax)
-ax.set_title("False matches rise with profile size", loc="left"); letter(ax, "a")
-ax.text(0.03, 0.97, "dotted: OR of the model's own\nsingle-member judgments", transform=ax.transAxes, ha="left", va="top", fontsize=6, color="0.35")
-ax = axes[1]
-for m in MODELS:
-    c = C[C.model == m]; ax.plot(c.k, c.recall, marker=MKM[m], ls="-", color=COL[m], ms=3.2, lw=1.2)
-ax.set_ylim(0, 1); ax.set_ylabel("share of held-out true members\njudged the same entity"); logk(ax)
-ax.set_title("So does recall", loc="left"); letter(ax, "b")
-handles = [plt.Line2D([], [], marker=MKM[m], ls="-", color=COL[m], ms=3.2, lw=1.2, label=SHORT[m]) for m in MODELS]
-ax = axes[2]; x = np.arange(len(MODELS)); w = .26
-ax.bar(x - w, CF.k1, w, color="0.82", label="$k$=1 (founding member)")
-ax.bar(x, CF.best_single16, w, color="0.5", label="most similar single member, $k$=16")
-ax.bar(x + w, CF.profile16, w, color="#a50f15", label="whole profile, $k$=16")
-ax.set_xticks(x); ax.set_xticklabels([SHORT[m].replace("Qwen", "Q").replace("OLMo-2-", "OLMo-").replace("Mistral-", "Mis-") for m in MODELS], rotation=30, ha="right", rotation_mode="anchor"); ax.set_ylim(0, 0.52)
-ax.set_ylabel("share of hard negatives\nwith P(YES) > 0.99"); ax.set_title("Confident false matches", loc="left"); letter(ax, "c")
-ax.legend(frameon=False, loc="upper left")
-fig.tight_layout(w_pad=1.2, rect=(0, 0.08, 1, 1)); fig.legend(handles=handles, loc="lower center", ncol=len(MODELS), frameon=False, bbox_to_anchor=(0.5, 0.0), handlelength=1.8, columnspacing=1.2)
+# Fig. 1 and Fig. 2 follow the advanced.dumbbell and advanced.slope recipes (olive-apricot endpoints),
+# with model identity kept in the colour-blind-safe COL palette.
+BEFORE, AFTER, CONNECT, UP, DOWN, GRIDC, REF = "#A68A64", "#606C38", "#BC6C25", "#BC6C25", "#DDA15E", "#E0E0E0", "#AAAAAA"
+def repel(ys, gap):
+    """Shift label positions apart by at least `gap`, keeping their order."""
+    order = np.argsort(ys); out = np.array(ys, float)
+    for a, b in zip(order[:-1], order[1:]):
+        if out[b] - out[a] < gap: out[b] = out[a] + gap
+    return out
+
+# ---- Fig. 1: one ROC panel per model. Both curves (k=1, k=16) and the path of the 0.5 operating point
+# as k grows, with the k=16 mitigations, show that the criterion moves along a nearly fixed curve.
+from sklearn.metrics import roc_curve
+MITK = {"skeptical prompt (k=16)": ("^", "skeptical prompt"), "last 4 members": ("v", "last 4 members"),
+        "founding + last 3": ("D", "founding + last 3")}
+fig, axes = plt.subplots(1, 6, figsize=(7.16, 2.0), sharey=True)
+for ax, m in zip(axes, MODELS):
+    S_, T_ = SC[m]; Tp_, Tn_ = split(T_, ["pos"]), split(T_, NEG)
+    ax.plot([0, 1], [0, 1], ls="--", color=REF, lw=.6, zorder=0)
+    for k, colr, lw in ((1, BEFORE, .9), (16, AFTER, 1.2)):
+        fpr, tpr, _ = roc_curve(np.r_[np.ones(len(Tp_)), np.zeros(len(Tn_))], np.r_[Tp_[k].values, Tn_[k].values])
+        ax.plot(fpr, tpr, color=colr, lw=lw, zorder=1)
+    c = C[C.model == m].sort_values("k")
+    ax.plot(c.fmr, c.recall, color=CONNECT, lw=1.1, zorder=2)
+    ax.annotate("", xy=(c.fmr.iloc[-1], c.recall.iloc[-1]), xytext=(c.fmr.iloc[-2], c.recall.iloc[-2]),
+                arrowprops=dict(arrowstyle="-|>", color=CONNECT, lw=1.1, mutation_scale=7, shrinkA=0, shrinkB=2), zorder=2)
+    ax.scatter(c.fmr, c.recall, s=[7, 10, 13, 16, 19], color=CONNECT, edgecolors="white", linewidths=.5, zorder=3)
+    for v, (mk, _) in MITK.items():
+        r = MI[(MI.model == m) & (MI.variant == v)].iloc[0]
+        ax.scatter(r.fmr, r.recall, marker=mk, s=11, facecolors="white", edgecolors="0.25", linewidths=.6, zorder=4)
+    a1, a16 = c.auc.iloc[0], c.auc.iloc[-1]
+    ax.text(.97, .04, f"AUC {a1:.2f} → {a16:.2f}", transform=ax.transAxes, ha="right", va="bottom", fontsize=5.6, color="0.25")
+    ax.set_xlim(0, 1); ax.set_ylim(0, 1); ax.set_aspect("equal"); ax.set_xticks([0, .5, 1]); ax.set_yticks([0, .5, 1])
+    ax.set_xticklabels(["0", ".5", "1"]); ax.set_title(SHORT[m], fontsize=7, pad=3)
+    ax.grid(color=GRIDC, lw=.4); ax.set_axisbelow(True)
+axes[0].set_yticklabels(["0", ".5", "1"]); axes[0].set_ylabel("recall of held-out members")
+fig.text(.53, .225, "false match rate on hard negatives", ha="center", fontsize=8)
+hd = [plt.Line2D([], [], color=BEFORE, lw=.9, label="ROC, $k$=1"), plt.Line2D([], [], color=AFTER, lw=1.2, label="ROC, $k$=16"),
+      plt.Line2D([], [], color=CONNECT, lw=1.1, marker="o", ms=3, mec="white", mew=.5, label="operating point at P(YES) > 0.5, $k$ = 1 → 16")]
+hd += [plt.Line2D([], [], ls="none", marker=mk, ms=3.6, mfc="white", mec="0.25", mew=.6, label=f"{lab} ($k$=16)") for mk, lab in MITK.values()]
+fig.legend(handles=hd, loc="lower center", ncol=6, frameon=False, bbox_to_anchor=(0.5, 0.02), fontsize=6.2, handlelength=1.6, columnspacing=1.1)
+fig.subplots_adjust(left=.07, right=.995, top=.885, bottom=.385, wspace=.12)
 fig.savefig(f"{FIG}/fig1_accretion.pdf"); fig.savefig(f"{FIG}/fig1_accretion.png", dpi=300); plt.close(fig)
 
-fig, axes = plt.subplots(1, 2, figsize=(7.16, 2.35), gridspec_kw={"width_ratios": [1.25, 1]})
-ax = axes[0]
-MK = {"founding member only": "o", "whole profile (k=16)": "s", "skeptical prompt (k=16)": "^", "last 4 members": "v", "founding + last 3": "D"}
+# ---- Fig. 2: effects beyond single members
+fig, axes = plt.subplots(1, 3, figsize=(7.16, 2.35), gridspec_kw={"width_ratios": [1.15, 1, 1]})
+# (a) excess of the profile judgment over the OR of single-member judgments
+ax = axes[0]; ax.grid(axis="y", color=GRIDC, lw=.5); ax.set_axisbelow(True)
+ax.axhline(0, color="0.45", lw=.7, zorder=1)
+ends = []
 for m in MODELS:
-    c = C[C.model == m]; ax.plot(c.fmr, c.recall, ls=LSM[m], color=COL[m], lw=1.1, alpha=.9, zorder=1)
-    for v, mk in MK.items():
-        r = MI[(MI.model == m) & (MI.variant == v)].iloc[0]
-        ax.scatter(r.fmr, r.recall, marker=mk, s=20, color=COL[m], edgecolor="k", lw=.3, zorder=3)
-for v, mk in MK.items(): ax.scatter([], [], marker=mk, s=20, color="0.6", edgecolor="k", lw=.3, label=v)
-for m in MODELS: ax.plot([], [], ls=LSM[m], color=COL[m], lw=1.1, label=SHORT[m])
-ax.set_xlim(0, 0.48); ax.set_ylim(0, 1); ax.set_xlabel("false-match rate on hard negatives"); ax.set_ylabel("recall of held-out true members")
-ax.set_title("Mitigations stay near the accretion curve (lines: $k$=1→16)", loc="left"); letter(ax, "a")
-ax.legend(frameon=False, loc="lower right", ncol=2, fontsize=5.8, handlelength=2.2, columnspacing=0.8)
-ax = axes[1]; x = np.arange(len(MODELS)); w = .36
+    c = C[C.model == m].sort_values("k"); ex = 100 * (c.fmr - c.fmr_or)
+    ax.plot(c.k, ex, marker=MKM[m], ls="-", color=COL[m], ms=2.6, lw=1.1, zorder=2); ends.append(ex.iloc[-1])
+for m, v in zip(MODELS, repel(ends, 2.4)):
+    ax.text(17.5, v, SHORT[m], fontsize=5.6, color=COL[m], ha="left", va="center")
+ax.set_xscale("log", base=2); ax.set_xticks(KS); ax.set_xticklabels([str(k) for k in KS]); ax.minorticks_off()
+ax.set_xlim(0.85, 40); ax.set_ylim(-8, 25); ax.set_xlabel("profile size $k$"); ax.set_ylabel("profile minus OR null (points)")
+ax.text(0.03, 0.97, "above 0: the profile accepts negatives\nthat no single member supports", transform=ax.transAxes, fontsize=5.6, color="0.4", va="top")
+ax.set_title("Excess over the OR null", loc="left"); letter(ax, "a")
+def slope(ax, L, R, labels, gap, lab_l, lab_r, fmt="{:.0f}", ylim=None, delta=False):
+    for i in range(len(L)):
+        colr = UP if R[i] > L[i] else DOWN
+        ax.plot([0, 1], [L[i], R[i]], color=colr, lw=1.4 if R[i] > L[i] else 1.0, solid_capstyle="round", zorder=2)
+        ax.scatter([0, 1], [L[i], R[i]], color=colr, s=16, zorder=3, edgecolors="white", linewidths=.6)
+    for i, v in enumerate(repel(R, gap)):
+        txt = f"{fmt.format(R[i])}  {labels[i]}" + (f" ({R[i] - L[i]:+.0f})" if delta else "")
+        ax.text(1.08, v, txt, fontsize=5.6, color=UP if R[i] > L[i] else DOWN, ha="left", va="center")
+    for i, v in enumerate(repel(L, gap)):
+        ax.text(-0.08, v, fmt.format(L[i]), fontsize=5.6, color="0.35", ha="right", va="center")
+    ax.set_xticks([0, 1]); ax.set_xticklabels([lab_l, lab_r], fontsize=6.3); ax.set_xlim(-0.35, 2.15)
+    if ylim: ax.set_ylim(*ylim)
+    ax.spines["bottom"].set_visible(False); ax.tick_params(axis="x", length=0)
+    ax.grid(axis="y", color=GRIDC, lw=.5); ax.set_axisbelow(True)
+# (b) confident false matches
+cf = CF.set_index("model").loc[MODELS]
+slope(axes[1], 100 * cf.best_single16.values, 100 * cf.profile16.values, [SHORT[m] for m in MODELS], 2.6,
+      "most similar\nmember", "whole\nprofile", ylim=(-1.5, 35))
+axes[1].set_ylabel("% of hard negatives"); axes[1].set_title("P(YES) > 0.99 at $k$=16", loc="left"); letter(axes[1], "b")
+# (c) contamination by one false merge
 c4 = CO[CO.k == 4].set_index("model").loc[MODELS]
-ax.bar(x - w / 2, c4.clean, w, color="0.6", label="4 verified members")
-ax.bar(x + w / 2, c4.contaminated, w, color="#a50f15", label="3 verified members + 1 false merge")
-ax.set_xticks(x); ax.set_xticklabels([SHORT[m].replace("Qwen", "Q").replace("OLMo-2-", "OLMo-").replace("Mistral-", "Mis-") for m in MODELS]); ax.set_ylim(0, 0.8)
-ax.set_ylabel("share judged the same entity"); ax.set_title("One false merge attracts the intruder's kin", loc="left"); letter(ax, "b")
-ax.legend(frameon=False, loc="upper left")
-fig.tight_layout(w_pad=1.5); fig.savefig(f"{FIG}/fig2_mitigation_snowball.pdf"); fig.savefig(f"{FIG}/fig2_mitigation_snowball.png", dpi=300); plt.close(fig)
+slope(axes[2], 100 * c4.clean.values, 100 * c4.contaminated.values, [SHORT[m] for m in MODELS], 3.6,
+      "clean:\n4 verified", "contaminated:\n3 verified + intruder", ylim=(0, 72), delta=True)
+axes[2].set_ylabel("% of second records accepted"); axes[2].set_title("One false merge ($k$=4)", loc="left"); letter(axes[2], "c")
+fig.tight_layout(w_pad=1.0); fig.savefig(f"{FIG}/fig2_mitigation_snowball.pdf"); fig.savefig(f"{FIG}/fig2_mitigation_snowball.png", dpi=300); plt.close(fig)
 print("macros", len(macros))
