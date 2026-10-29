@@ -1,0 +1,7 @@
+# Analysis: rebuild numbers, tables and figures from data/ (scripts/build_assets.py).
+# Tested with these versions; pandas 3 is not supported (pandas>=3 rejects Series[:, None]).
+numpy==2.5.4
+pandas==2.3.3
+scipy==1.18.1
+scikit-learn==1.9.1
+matplotlib==3.11.2

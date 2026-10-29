@@ -1,0 +1,30 @@
+Loading weights:   0%|          | 0/579 [00:00<?, ?it/s]Loading weights:   0%|          | 1/579 [00:00<03:31,  2.73it/s]Loading weights:   0%|          | 2/579 [00:00<03:30,  2.74it/s]Loading weights:   1%|          | 6/579 [00:00<00:59,  9.67it/s]Loading weights:   3%|▎         | 18/579 [00:00<00:18, 30.88it/s]Loading weights:   5%|▌         | 30/579 [00:01<00:11, 47.54it/s]Loading weights:   7%|▋         | 42/579 [00:01<00:08, 60.36it/s]Loading weights:   9%|▉         | 52/579 [00:01<00:07, 69.27it/s]Loading weights:  11%|█         | 65/579 [00:01<00:07, 73.40it/s]Loading weights:  13%|█▎        | 77/579 [00:01<00:06, 78.33it/s]Loading weights:  16%|█▌        | 90/579 [00:01<00:05, 86.25it/s]Loading weights:  18%|█▊        | 102/579 [00:01<00:05, 86.94it/s]Loading weights:  20%|█▉        | 114/579 [00:02<00:05, 88.39it/s]Loading weights:  22%|██▏       | 126/579 [00:02<00:05, 89.31it/s]Loading weights:  24%|██▎       | 137/579 [00:02<00:04, 89.91it/s]Loading weights:  26%|██▌       | 150/579 [00:02<00:04, 93.85it/s]Loading weights:  28%|██▊       | 162/579 [00:02<00:04, 93.51it/s]Loading weights:  30%|███       | 174/579 [00:02<00:04, 93.53it/s]Loading weights:  32%|███▏      | 185/579 [00:02<00:04, 91.36it/s]Loading weights:  34%|███▍      | 198/579 [00:02<00:03, 96.10it/s]Loading weights:  36%|███▋      | 210/579 [00:03<00:03, 96.84it/s]Loading weights:  38%|███▊      | 222/579 [00:03<00:03, 95.25it/s]Loading weights:  40%|████      | 234/579 [00:03<00:03, 96.24it/s]Loading weights:  42%|████▏     | 246/579 [00:03<00:03, 94.90it/s]Loading weights:  45%|████▍     | 258/579 [00:03<00:03, 95.39it/s]Loading weights:  47%|████▋     | 270/579 [00:03<00:03, 94.67it/s]Loading weights:  49%|████▊     | 282/579 [00:03<00:03, 93.56it/s]Loading weights:  51%|█████     | 294/579 [00:03<00:03, 93.38it/s]Loading weights:  53%|█████▎    | 306/579 [00:04<00:02, 92.45it/s]Loading weights:  55%|█████▍    | 318/579 [00:04<00:02, 93.36it/s]Loading weights:  57%|█████▋    | 330/579 [00:04<00:02, 92.33it/s]Loading weights:  59%|█████▉    | 342/579 [00:04<00:02, 92.11it/s]Loading weights:  61%|██████    | 353/579 [00:04<00:02, 89.06it/s]Loading weights:  63%|██████▎   | 366/579 [00:04<00:02, 92.46it/s]Loading weights:  65%|██████▌   | 378/579 [00:04<00:02, 93.32it/s]Loading weights:  67%|██████▋   | 390/579 [00:04<00:02, 92.78it/s]Loading weights:  69%|██████▉   | 402/579 [00:05<00:01, 95.96it/s]Loading weights:  71%|███████   | 412/579 [00:05<00:01, 89.76it/s]Loading weights:  74%|███████▎  | 426/579 [00:05<00:01, 95.42it/s]Loading weights:  76%|███████▌  | 438/579 [00:05<00:01, 94.84it/s]Loading weights:  78%|███████▊  | 450/579 [00:05<00:01, 95.16it/s]Loading weights:  79%|███████▉  | 460/579 [00:05<00:01, 95.33it/s]Loading weights:  82%|████████▏ | 472/579 [00:05<00:01, 92.72it/s]Loading weights:  84%|████████▍ | 485/579 [00:05<00:00, 94.74it/s]Loading weights:  86%|████████▌ | 497/579 [00:06<00:00, 88.92it/s]Loading weights:  88%|████████▊ | 510/579 [00:06<00:00, 92.40it/s]Loading weights:  90%|█████████ | 522/579 [00:06<00:00, 88.99it/s]Loading weights:  92%|█████████▏| 534/579 [00:06<00:00, 90.88it/s]Loading weights:  94%|█████████▍| 546/579 [00:06<00:00, 91.87it/s]Loading weights:  96%|█████████▋| 558/579 [00:06<00:00, 92.15it/s]Loading weights:  98%|█████████▊| 570/579 [00:06<00:00, 94.18it/s]Loading weights: 100%|██████████| 579/579 [00:06<00:00, 83.88it/s]
+loaded Qwen/Qwen2.5-14B-Instruct 10 s
+comem 1007 / 2394 16 s
+comem 2005 / 2394 50 s
+FINISHED comem_select Qwen2.5-14B-Instruct 84 s
+generate 200 / 2394 6 s
+generate 400 / 2394 12 s
+generate 600 / 2394 18 s
+generate 800 / 2394 25 s
+generate 1000 / 2394 42 s
+generate 1200 / 2394 59 s
+generate 1400 / 2394 77 s
+generate 1600 / 2394 99 s
+generate 1800 / 2394 189 s
+generate 2000 / 2394 283 s
+generate 2200 / 2394 377 s
+FINISHED batcher Qwen2.5-14B-Instruct 565 s
+generate 200 / 2394 10 s
+generate 400 / 2394 22 s
+generate 600 / 2394 32 s
+generate 800 / 2394 46 s
+generate 1000 / 2394 64 s
+generate 1200 / 2394 86 s
+generate 1400 / 2394 106 s
+generate 1600 / 2394 135 s
+generate 1800 / 2394 264 s
+generate 2000 / 2394 380 s
+generate 2200 / 2394 515 s
+FINISHED llmcer_cluster Qwen2.5-14B-Instruct 1227 s
+ALL DONE Qwen2.5-14B-Instruct 1227 s

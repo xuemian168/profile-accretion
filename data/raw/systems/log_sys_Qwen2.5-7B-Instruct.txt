@@ -1,0 +1,30 @@
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<01:18,  4.32it/s]Loading weights:   1%|          | 2/339 [00:00<01:21,  4.14it/s]Loading weights:   4%|▍         | 13/339 [00:00<00:10, 31.29it/s]Loading weights:   7%|▋         | 24/339 [00:00<00:06, 52.15it/s]Loading weights:   9%|▉         | 32/339 [00:00<00:05, 59.56it/s]Loading weights:  12%|█▏        | 42/339 [00:00<00:04, 68.97it/s]Loading weights:  16%|█▌        | 53/339 [00:01<00:03, 78.76it/s]Loading weights:  19%|█▉        | 65/339 [00:01<00:03, 88.14it/s]Loading weights:  23%|██▎       | 77/339 [00:01<00:02, 92.10it/s]Loading weights:  26%|██▋       | 89/339 [00:01<00:02, 98.87it/s]Loading weights:  30%|███       | 102/339 [00:01<00:02, 104.58it/s]Loading weights:  34%|███▎      | 114/339 [00:01<00:02, 107.29it/s]Loading weights:  37%|███▋      | 126/339 [00:01<00:01, 106.64it/s]Loading weights:  41%|████      | 138/339 [00:01<00:01, 106.45it/s]Loading weights:  44%|████▍     | 150/339 [00:01<00:01, 106.70it/s]Loading weights:  48%|████▊     | 162/339 [00:02<00:01, 106.76it/s]Loading weights:  51%|█████     | 173/339 [00:02<00:01, 103.89it/s]Loading weights:  55%|█████▍    | 185/339 [00:02<00:01, 107.42it/s]Loading weights:  58%|█████▊    | 198/339 [00:02<00:01, 110.95it/s]Loading weights:  62%|██████▏   | 210/339 [00:02<00:01, 109.02it/s]Loading weights:  65%|██████▌   | 222/339 [00:02<00:01, 110.64it/s]Loading weights:  69%|██████▉   | 234/339 [00:02<00:00, 107.93it/s]Loading weights:  72%|███████▏  | 245/339 [00:02<00:00, 104.78it/s]Loading weights:  76%|███████▌  | 257/339 [00:02<00:00, 106.77it/s]Loading weights:  80%|███████▉  | 270/339 [00:02<00:00, 112.19it/s]Loading weights:  83%|████████▎ | 282/339 [00:03<00:00, 113.13it/s]Loading weights:  87%|████████▋ | 294/339 [00:03<00:00, 109.77it/s]Loading weights:  90%|█████████ | 306/339 [00:03<00:00, 109.90it/s]Loading weights:  94%|█████████▍| 318/339 [00:03<00:00, 107.16it/s]Loading weights:  97%|█████████▋| 330/339 [00:03<00:00, 107.35it/s]Loading weights: 100%|██████████| 339/339 [00:03<00:00, 95.24it/s] 
+loaded Qwen/Qwen2.5-7B-Instruct 7 s
+comem 1007 / 2394 8 s
+comem 2005 / 2394 25 s
+FINISHED comem_select Qwen2.5-7B-Instruct 44 s
+generate 200 / 2394 3 s
+generate 400 / 2394 7 s
+generate 600 / 2394 10 s
+generate 800 / 2394 14 s
+generate 1000 / 2394 24 s
+generate 1200 / 2394 34 s
+generate 1400 / 2394 44 s
+generate 1600 / 2394 56 s
+generate 1800 / 2394 99 s
+generate 2000 / 2394 144 s
+generate 2200 / 2394 189 s
+FINISHED batcher Qwen2.5-7B-Instruct 283 s
+generate 200 / 2394 13 s
+generate 400 / 2394 21 s
+generate 600 / 2394 30 s
+generate 800 / 2394 60 s
+generate 1000 / 2394 103 s
+generate 1200 / 2394 144 s
+generate 1400 / 2394 187 s
+generate 1600 / 2394 234 s
+generate 1800 / 2394 328 s
+generate 2000 / 2394 421 s
+generate 2200 / 2394 516 s
+FINISHED llmcer_cluster Qwen2.5-7B-Instruct 897 s
+ALL DONE Qwen2.5-7B-Instruct 897 s

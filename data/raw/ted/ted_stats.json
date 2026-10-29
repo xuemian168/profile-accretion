@@ -1,0 +1,13 @@
+{
+ "win_records_valid_id": 17267,
+ "distinct_entities": 6857,
+ "entities_ge17": 102,
+ "countries": [
+  "BG",
+  "CZ"
+ ],
+ "entities": 102,
+ "entities_cz": 16,
+ "entities_bg": 86,
+ "mitigation_prompts": 2634
+}

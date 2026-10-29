@@ -1,0 +1,2 @@
+model_attempted,model_not_run,total_requests_attempted,total_ok,total_err,unique_prompts_total,unique_prompts_with_ge1_valid_sample,unique_prompts_with_3of3_valid,profile_prompts_total,profile_prompts_covered,snowball_prompts_total,snowball_prompts_covered,entities_total,entities_with_profile_coverage,entities_with_snowball_coverage,haiku_calls_attempted,stop_cause
+claude-sonnet-5,claude-haiku-5-5,2610,2477,133,1112,836,809,900,683,212,153,100,100,65,0,host.llm per-frame token ceiling (2.0M) reached mid-Sonnet-run; delegation to sub-agent shards unavailable (frame is a leaf)

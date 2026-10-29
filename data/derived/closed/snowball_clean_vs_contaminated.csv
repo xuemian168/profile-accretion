@@ -1,0 +1,2 @@
+model,test,n_pairs,clean_rate,contaminated_rate,gap,up,down,mcnemar_p,n_entities,entity_sign_up,entity_sign_down,entity_sign_tie,entity_sign_p,boot_gap_mean,boot_gap_ci_lo,boot_gap_ci_hi
+claude-sonnet-5,snowball_clean_vs_contaminated_k4,54,0.18518518518518517,0.25925925925925924,0.07407407407407407,6,2,0.2890625,44,5,2,37,0.453125,0.0750653533380765,-0.01961764705882354,0.19999999999999998

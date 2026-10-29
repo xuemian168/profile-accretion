@@ -1,0 +1,18 @@
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<02:52,  1.96it/s]Loading weights:   4%|▎         | 12/339 [00:00<00:12, 25.46it/s]Loading weights:   6%|▌         | 19/339 [00:00<00:09, 35.53it/s]Loading weights:   9%|▉         | 30/339 [00:00<00:05, 52.99it/s]Loading weights:  12%|█▏        | 42/339 [00:00<00:04, 69.18it/s]Loading weights:  16%|█▌        | 53/339 [00:01<00:03, 77.76it/s]Loading weights:  19%|█▉        | 65/339 [00:01<00:03, 87.12it/s]Loading weights:  23%|██▎       | 77/339 [00:01<00:02, 91.42it/s]Loading weights:  27%|██▋       | 90/339 [00:01<00:02, 99.79it/s]Loading weights:  30%|███       | 102/339 [00:01<00:02, 102.01it/s]Loading weights:  34%|███▎      | 114/339 [00:01<00:02, 100.66it/s]Loading weights:  37%|███▋      | 126/339 [00:01<00:02, 103.22it/s]Loading weights:  40%|████      | 137/339 [00:01<00:01, 103.58it/s]Loading weights:  44%|████▍     | 150/339 [00:01<00:01, 107.40it/s]Loading weights:  48%|████▊     | 162/339 [00:02<00:01, 109.54it/s]Loading weights:  51%|█████▏    | 174/339 [00:02<00:01, 110.51it/s]Loading weights:  56%|█████▌    | 189/339 [00:02<00:01, 120.37it/s]Loading weights:  60%|█████▉    | 202/339 [00:02<00:01, 120.91it/s]Loading weights:  63%|██████▎   | 215/339 [00:02<00:01, 121.19it/s]Loading weights:  67%|██████▋   | 228/339 [00:02<00:00, 117.19it/s]Loading weights:  71%|███████   | 240/339 [00:02<00:00, 113.32it/s]Loading weights:  74%|███████▍  | 252/339 [00:02<00:00, 110.04it/s]Loading weights:  78%|███████▊  | 264/339 [00:02<00:00, 110.96it/s]Loading weights:  81%|████████▏ | 276/339 [00:03<00:00, 111.44it/s]Loading weights:  85%|████████▍ | 288/339 [00:03<00:00, 113.27it/s]Loading weights:  88%|████████▊ | 300/339 [00:03<00:00, 112.23it/s]Loading weights:  93%|█████████▎| 314/339 [00:03<00:00, 118.97it/s]Loading weights:  96%|█████████▌| 326/339 [00:03<00:00, 118.08it/s]Loading weights: 100%|█████████▉| 338/339 [00:03<00:00, 118.04it/s]Loading weights: 100%|██████████| 339/339 [00:03<00:00, 95.42it/s] 
+variant profile_t0.5 done 73 s calls 6143
+variant profile_t0.8 done 132 s calls 6256
+variant profile_t0.95 done 189 s calls 6319
+variant profile_t0.99 done 243 s calls 6345
+variant profile_t0.999 done 295 s calls 6370
+variant anchor_t0.5 done 342 s calls 6180
+variant anchor_t0.8 done 389 s calls 6280
+variant anchor_t0.95 done 436 s calls 6328
+variant anchor_t0.99 done 484 s calls 6369
+variant anchor_t0.999 done 531 s calls 6388
+variant profile_cal_tau0.05 done 586 s calls 6308
+variant profile_cal_tau0.1 done 644 s calls 6193
+variant profile_cal_tau0.15 done 706 s calls 6057
+variant profile_cal_tau0.2 done 771 s calls 5854
+variant profile_cal_tau0.3 done 837 s calls 5307
+variant profile_audit_soft done 919 s calls 8809
+FINISHED Qwen/Qwen2.5-7B-Instruct 919 s

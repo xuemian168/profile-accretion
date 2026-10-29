@@ -1,0 +1,224 @@
+{
+  "_meta": {
+    "fit_entities": 186,
+    "excluded_block_entities": 80,
+    "total_entities": 266,
+    "note": "k=1 bin is the reference point; t_1 fixed at 0.5"
+  },
+  "Qwen2.5-7B-Instruct": {
+    "target_fmr_k1": 0.06989247311827956,
+    "n_neg_k1": 372,
+    "bins": {
+      "1": {
+        "t": 0.5,
+        "capped": false,
+        "achieved_fmr": 0.06989247311827956,
+        "note": "reference bin"
+      },
+      "2": {
+        "t": 0.8175776600837701,
+        "n_neg": 372,
+        "capped": false,
+        "achieved_fmr": 0.06989247311827956
+      },
+      "4": {
+        "t": 0.998073279857635,
+        "n_neg": 372,
+        "capped": false,
+        "achieved_fmr": 0.06989247311827956
+      },
+      "8": {
+        "t": 0.9988304972648621,
+        "n_neg": 372,
+        "capped": false,
+        "achieved_fmr": 0.06989247311827956
+      },
+      "16": {
+        "t": 0.9998415708541871,
+        "n_neg": 372,
+        "capped": false,
+        "achieved_fmr": 0.06989247311827956
+      }
+    }
+  },
+  "Qwen2.5-14B-Instruct": {
+    "target_fmr_k1": 0.06989247311827956,
+    "n_neg_k1": 372,
+    "bins": {
+      "1": {
+        "t": 0.5,
+        "capped": false,
+        "achieved_fmr": 0.06989247311827956,
+        "note": "reference bin"
+      },
+      "2": {
+        "t": 0.999993860721588,
+        "n_neg": 372,
+        "capped": false,
+        "achieved_fmr": 0.06720430107526881
+      },
+      "4": {
+        "t": 0.9999998211860651,
+        "n_neg": 372,
+        "capped": false,
+        "achieved_fmr": 0.06182795698924731
+      },
+      "8": {
+        "t": 0.999999344348907,
+        "n_neg": 372,
+        "capped": false,
+        "achieved_fmr": 0.06989247311827956
+      },
+      "16": {
+        "t": 0.9999997615814201,
+        "n_neg": 372,
+        "capped": false,
+        "achieved_fmr": 0.06720430107526881
+      }
+    }
+  },
+  "Qwen2.5-32B-Instruct": {
+    "target_fmr_k1": 0.04838709677419355,
+    "n_neg_k1": 372,
+    "bins": {
+      "1": {
+        "t": 0.5,
+        "capped": false,
+        "achieved_fmr": 0.04838709677419355,
+        "note": "reference bin"
+      },
+      "2": {
+        "t": 0.999088943004608,
+        "n_neg": 372,
+        "capped": false,
+        "achieved_fmr": 0.04838709677419355
+      },
+      "4": {
+        "t": 0.9999998807907101,
+        "n_neg": 372,
+        "capped": false,
+        "achieved_fmr": 0.03763440860215054
+      },
+      "8": {
+        "t": 0.9999999403953551,
+        "n_neg": 372,
+        "capped": true,
+        "achieved_fmr": 0.0967741935483871
+      },
+      "16": {
+        "t": 0.9999999403953551,
+        "n_neg": 372,
+        "capped": true,
+        "achieved_fmr": 0.12634408602150538
+      }
+    }
+  },
+  "Qwen3-32B": {
+    "target_fmr_k1": 0.15053763440860216,
+    "n_neg_k1": 372,
+    "bins": {
+      "1": {
+        "t": 0.5,
+        "capped": false,
+        "achieved_fmr": 0.15053763440860216,
+        "note": "reference bin"
+      },
+      "2": {
+        "t": 0.9914226531982421,
+        "n_neg": 372,
+        "capped": false,
+        "achieved_fmr": 0.15053763440860216
+      },
+      "4": {
+        "t": 0.9959298968315121,
+        "n_neg": 372,
+        "capped": false,
+        "achieved_fmr": 0.15053763440860216
+      },
+      "8": {
+        "t": 0.9992903470993041,
+        "n_neg": 372,
+        "capped": false,
+        "achieved_fmr": 0.15053763440860216
+      },
+      "16": {
+        "t": 0.99919593334198,
+        "n_neg": 372,
+        "capped": false,
+        "achieved_fmr": 0.1478494623655914
+      }
+    }
+  },
+  "OLMo-2-0325-32B-Instruct": {
+    "target_fmr_k1": 0.043010752688172046,
+    "n_neg_k1": 372,
+    "bins": {
+      "1": {
+        "t": 0.5,
+        "capped": false,
+        "achieved_fmr": 0.043010752688172046,
+        "note": "reference bin"
+      },
+      "2": {
+        "t": 0.592772245407104,
+        "n_neg": 372,
+        "capped": false,
+        "achieved_fmr": 0.043010752688172046
+      },
+      "4": {
+        "t": 0.9466055035591121,
+        "n_neg": 372,
+        "capped": false,
+        "achieved_fmr": 0.043010752688172046
+      },
+      "8": {
+        "t": 0.9626852869987481,
+        "n_neg": 372,
+        "capped": false,
+        "achieved_fmr": 0.043010752688172046
+      },
+      "16": {
+        "t": 0.9399301409721371,
+        "n_neg": 372,
+        "capped": false,
+        "achieved_fmr": 0.043010752688172046
+      }
+    }
+  },
+  "Mistral-Small-24B-Instruct-2501": {
+    "target_fmr_k1": 0.005376344086021506,
+    "n_neg_k1": 372,
+    "bins": {
+      "1": {
+        "t": 0.5,
+        "capped": false,
+        "achieved_fmr": 0.005376344086021506,
+        "note": "reference bin"
+      },
+      "2": {
+        "t": 0.9461778402328491,
+        "n_neg": 372,
+        "capped": false,
+        "achieved_fmr": 0.005376344086021506
+      },
+      "4": {
+        "t": 0.957455039024353,
+        "n_neg": 372,
+        "capped": false,
+        "achieved_fmr": 0.005376344086021506
+      },
+      "8": {
+        "t": 0.9737527370452881,
+        "n_neg": 372,
+        "capped": false,
+        "achieved_fmr": 0.005376344086021506
+      },
+      "16": {
+        "t": 0.973715126514434,
+        "n_neg": 372,
+        "capped": false,
+        "achieved_fmr": 0.005376344086021506
+      }
+    }
+  }
+}

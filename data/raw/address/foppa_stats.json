@@ -1,0 +1,11 @@
+{
+ "supplier_agents": 275865,
+ "with_valid_siret": 203988,
+ "distinct_siret": 203988,
+ "distinct_siren": 162104,
+ "siren_ge17": 266,
+ "entities": 266,
+ "mitigation_prompts": 6710,
+ "blocks": 80,
+ "block_records": 2572
+}

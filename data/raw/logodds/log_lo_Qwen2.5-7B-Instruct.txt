@@ -1,0 +1,13 @@
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<03:05,  1.82it/s]Loading weights:   5%|▍         | 16/339 [00:00<00:10, 31.26it/s]Loading weights:   8%|▊         | 28/339 [00:00<00:06, 50.10it/s]Loading weights:  12%|█▏        | 40/339 [00:00<00:04, 63.76it/s]Loading weights:  15%|█▌        | 51/339 [00:01<00:04, 69.28it/s]Loading weights:  19%|█▉        | 64/339 [00:01<00:03, 80.38it/s]Loading weights:  22%|██▏       | 74/339 [00:01<00:03, 85.17it/s]Loading weights:  25%|██▍       | 84/339 [00:01<00:03, 84.62it/s]Loading weights:  28%|██▊       | 94/339 [00:01<00:02, 83.80it/s]Loading weights:  31%|███▏      | 106/339 [00:01<00:02, 92.80it/s]Loading weights:  34%|███▍      | 116/339 [00:01<00:02, 92.15it/s]Loading weights:  37%|███▋      | 126/339 [00:01<00:02, 93.80it/s]Loading weights:  41%|████      | 138/339 [00:01<00:02, 99.41it/s]Loading weights:  44%|████▍     | 150/339 [00:02<00:01, 101.49it/s]Loading weights:  47%|████▋     | 161/339 [00:02<00:01, 99.07it/s] Loading weights:  51%|█████▏    | 174/339 [00:02<00:01, 98.83it/s]Loading weights:  55%|█████▍    | 185/339 [00:02<00:01, 97.31it/s]Loading weights:  58%|█████▊    | 198/339 [00:02<00:01, 96.63it/s]Loading weights:  62%|██████▏   | 210/339 [00:02<00:01, 95.38it/s]Loading weights:  65%|██████▌   | 222/339 [00:02<00:01, 92.55it/s]Loading weights:  69%|██████▉   | 234/339 [00:02<00:01, 94.72it/s]Loading weights:  72%|███████▏  | 245/339 [00:03<00:01, 91.96it/s]Loading weights:  76%|███████▌  | 258/339 [00:03<00:00, 95.38it/s]Loading weights:  80%|███████▉  | 270/339 [00:03<00:00, 98.84it/s]Loading weights:  83%|████████▎ | 282/339 [00:03<00:00, 100.96it/s]Loading weights:  87%|████████▋ | 294/339 [00:03<00:00, 99.03it/s] Loading weights:  90%|█████████ | 306/339 [00:03<00:00, 99.28it/s]Loading weights:  94%|█████████▍| 318/339 [00:03<00:00, 99.85it/s]Loading weights:  97%|█████████▋| 330/339 [00:03<00:00, 95.49it/s]Loading weights: 100%|██████████| 339/339 [00:03<00:00, 86.72it/s]
+loaded Qwen/Qwen2.5-7B-Instruct 7 s
+yes ids [7414, 9454, 9693, 9834, 14004, 14080] no ids [902, 2152, 2308, 2753, 5664, 8996]
+prompts 16758 tokens 3699945 max 635
+2012 scored 22 s
+4038 scored 32 s
+6033 scored 41 s
+8051 scored 51 s
+10028 scored 61 s
+12051 scored 71 s
+14038 scored 83 s
+16000 scored 105 s
+FINISHED Qwen/Qwen2.5-7B-Instruct 16758 117 s

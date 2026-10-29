@@ -1,0 +1,32 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] The tokenizer you are loading from 'mistralai/Mistral-Small-24B-Instruct-2501' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+Loading weights:   0%|          | 0/363 [00:00<?, ?it/s]Loading weights:   0%|          | 1/363 [00:00<01:57,  3.08it/s]Loading weights:   1%|          | 2/363 [00:00<01:58,  3.04it/s]Loading weights:   1%|▏         | 5/363 [00:00<00:46,  7.70it/s]Loading weights:   3%|▎         | 10/363 [00:00<00:21, 16.36it/s]Loading weights:   4%|▍         | 14/363 [00:01<00:18, 19.07it/s]Loading weights:   5%|▌         | 19/363 [00:01<00:13, 25.53it/s]Loading weights:   6%|▋         | 23/363 [00:01<00:12, 26.17it/s]Loading weights:   8%|▊         | 28/363 [00:01<00:10, 30.56it/s]Loading weights:   9%|▉         | 32/363 [00:01<00:11, 29.56it/s]Loading weights:  10%|█         | 38/363 [00:01<00:08, 36.23it/s]Loading weights:  12%|█▏        | 42/363 [00:01<00:11, 28.11it/s]Loading weights:  14%|█▍        | 50/363 [00:02<00:09, 34.21it/s]Loading weights:  15%|█▌        | 55/363 [00:02<00:08, 37.15it/s]Loading weights:  17%|█▋        | 60/363 [00:02<00:09, 30.59it/s]Loading weights:  19%|█▊        | 68/363 [00:02<00:09, 31.78it/s]Loading weights:  21%|██        | 77/363 [00:02<00:07, 37.98it/s]Loading weights:  23%|██▎       | 83/363 [00:02<00:06, 42.14it/s]Loading weights:  24%|██▍       | 88/363 [00:03<00:07, 35.16it/s]Loading weights:  26%|██▌       | 95/363 [00:03<00:07, 37.66it/s]Loading weights:  28%|██▊       | 102/363 [00:03<00:06, 43.35it/s]Loading weights:  29%|██▉       | 107/363 [00:03<00:07, 35.95it/s]Loading weights:  31%|███       | 113/363 [00:03<00:06, 36.29it/s]Loading weights:  33%|███▎      | 119/363 [00:03<00:06, 40.29it/s]Loading weights:  34%|███▍      | 124/363 [00:04<00:07, 33.40it/s]Loading weights:  36%|███▌      | 131/363 [00:04<00:06, 36.12it/s]Loading weights:  38%|███▊      | 137/363 [00:04<00:05, 40.51it/s]Loading weights:  39%|███▉      | 142/363 [00:04<00:06, 33.90it/s]Loading weights:  41%|████      | 149/363 [00:04<00:05, 36.99it/s]Loading weights:  43%|████▎     | 157/363 [00:04<00:05, 40.64it/s]Loading weights:  45%|████▍     | 162/363 [00:05<00:05, 38.16it/s]Loading weights:  46%|████▌     | 167/363 [00:05<00:05, 35.56it/s]Loading weights:  48%|████▊     | 175/363 [00:05<00:04, 39.55it/s]Loading weights:  50%|████▉     | 180/363 [00:05<00:04, 37.34it/s]Loading weights:  51%|█████     | 185/363 [00:05<00:04, 35.83it/s]Loading weights:  53%|█████▎    | 193/363 [00:05<00:04, 40.06it/s]Loading weights:  55%|█████▍    | 198/363 [00:06<00:04, 38.01it/s]Loading weights:  56%|█████▌    | 203/363 [00:06<00:04, 35.96it/s]Loading weights:  58%|█████▊    | 211/363 [00:06<00:03, 39.58it/s]Loading weights:  59%|█████▉    | 215/363 [00:06<00:04, 35.49it/s]Loading weights:  61%|██████    | 221/363 [00:06<00:03, 36.03it/s]Loading weights:  63%|██████▎   | 227/363 [00:06<00:03, 41.09it/s]Loading weights:  64%|██████▍   | 232/363 [00:07<00:03, 33.98it/s]Loading weights:  66%|██████▌   | 239/363 [00:07<00:03, 36.94it/s]Loading weights:  67%|██████▋   | 245/363 [00:07<00:02, 41.10it/s]Loading weights:  69%|██████▉   | 250/363 [00:07<00:03, 34.25it/s]Loading weights:  71%|███████   | 257/363 [00:07<00:02, 37.20it/s]Loading weights:  73%|███████▎  | 264/363 [00:07<00:02, 43.48it/s]Loading weights:  74%|███████▍  | 269/363 [00:07<00:02, 36.00it/s]Loading weights:  76%|███████▌  | 275/363 [00:08<00:02, 36.36it/s]Loading weights:  78%|███████▊  | 282/363 [00:08<00:01, 42.76it/s]Loading weights:  79%|███████▉  | 287/363 [00:08<00:02, 35.29it/s]Loading weights:  81%|████████  | 293/363 [00:08<00:01, 35.63it/s]Loading weights:  83%|████████▎ | 301/363 [00:08<00:01, 39.49it/s]Loading weights:  84%|████████▍ | 306/363 [00:08<00:01, 38.04it/s]Loading weights:  86%|████████▌ | 311/363 [00:09<00:01, 36.03it/s]Loading weights:  87%|████████▋ | 317/363 [00:09<00:01, 40.95it/s]Loading weights:  89%|████████▊ | 322/363 [00:09<00:01, 33.98it/s]Loading weights:  91%|█████████ | 329/363 [00:09<00:00, 36.90it/s]Loading weights:  92%|█████████▏| 334/363 [00:09<00:00, 39.55it/s]Loading weights:  93%|█████████▎| 339/363 [00:09<00:00, 33.34it/s]Loading weights:  96%|█████████▌| 347/363 [00:10<00:00, 37.91it/s]Loading weights:  97%|█████████▋| 353/363 [00:10<00:00, 42.44it/s]Loading weights:  99%|█████████▊| 358/363 [00:10<00:00, 34.66it/s]Loading weights: 100%|██████████| 363/363 [00:10<00:00, 35.04it/s]
+loaded mistralai/Mistral-Small-24B-Instruct-2501 15 s
+comem 1014 / 2394 22 s
+comem 2003 / 2394 72 s
+FINISHED comem_select Mistral-Small-24B-Instruct-2501 121 s
+generate 200 / 2394 8 s
+generate 400 / 2394 15 s
+generate 600 / 2394 23 s
+generate 800 / 2394 31 s
+generate 1000 / 2394 52 s
+generate 1200 / 2394 73 s
+generate 1400 / 2394 94 s
+generate 1600 / 2394 120 s
+generate 1800 / 2394 215 s
+generate 2000 / 2394 312 s
+generate 2200 / 2394 412 s
+FINISHED batcher Mistral-Small-24B-Instruct-2501 641 s
+generate 200 / 2394 13 s
+generate 400 / 2394 27 s
+generate 600 / 2394 40 s
+generate 800 / 2394 57 s
+generate 1000 / 2394 79 s
+generate 1200 / 2394 100 s
+generate 1400 / 2394 122 s
+generate 1600 / 2394 148 s
+generate 1800 / 2394 221 s
+generate 2000 / 2394 297 s
+generate 2200 / 2394 379 s
+FINISHED llmcer_cluster Mistral-Small-24B-Instruct-2501 1100 s
+ALL DONE Mistral-Small-24B-Instruct-2501 1100 s

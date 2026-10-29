@@ -1,0 +1,5 @@
+model,test,query,n_pairs,k1_to_k16_up,k16_to_k1_down,same_yes,same_no,discordant,mcnemar_p
+claude-sonnet-5,McNemar_k1_vs_k16,negA,54,12,0,0,42,12,0.00048828125
+claude-sonnet-5,McNemar_k1_vs_k16,negB,60,10,0,0,50,10,0.001953125
+claude-sonnet-5,McNemar_k1_vs_k16,negA+negB,114,22,0,0,92,22,4.76837158203125e-07
+claude-sonnet-5,McNemar_k1_vs_k16,pos,61,37,0,9,15,37,1.4551915228366852e-11

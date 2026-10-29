@@ -1,0 +1,121 @@
+[
+  {
+    "name": "profile_t0.5",
+    "use_profile": true,
+    "threshold": 0.5
+  },
+  {
+    "name": "profile_t0.8",
+    "use_profile": true,
+    "threshold": 0.8
+  },
+  {
+    "name": "profile_t0.95",
+    "use_profile": true,
+    "threshold": 0.95
+  },
+  {
+    "name": "profile_t0.99",
+    "use_profile": true,
+    "threshold": 0.99
+  },
+  {
+    "name": "profile_t0.999",
+    "use_profile": true,
+    "threshold": 0.999
+  },
+  {
+    "name": "anchor_t0.5",
+    "use_profile": false,
+    "threshold": 0.5
+  },
+  {
+    "name": "anchor_t0.8",
+    "use_profile": false,
+    "threshold": 0.8
+  },
+  {
+    "name": "anchor_t0.95",
+    "use_profile": false,
+    "threshold": 0.95
+  },
+  {
+    "name": "anchor_t0.99",
+    "use_profile": false,
+    "threshold": 0.99
+  },
+  {
+    "name": "anchor_t0.999",
+    "use_profile": false,
+    "threshold": 0.999
+  },
+  {
+    "name": "profile_cal_tau0.05",
+    "use_profile": true,
+    "cal_bins": {
+      "1": 0.08796216547489101,
+      "2": 0.472309082746505,
+      "4": 0.852089285850524,
+      "8": 0.9147114753723141,
+      "16": 0.9393611550331111
+    }
+  },
+  {
+    "name": "profile_cal_tau0.1",
+    "use_profile": true,
+    "cal_bins": {
+      "1": 0.044296335428953004,
+      "2": 0.187037914991378,
+      "4": 0.62425810098648,
+      "8": 0.798184216022491,
+      "16": 0.880902528762817
+    }
+  },
+  {
+    "name": "profile_cal_tau0.15",
+    "use_profile": true,
+    "cal_bins": {
+      "1": 0.027756650000810002,
+      "2": 0.12290950119495302,
+      "4": 0.35276636481285,
+      "8": 0.6797301769256591,
+      "16": 0.7978329658508301
+    }
+  },
+  {
+    "name": "profile_cal_tau0.2",
+    "use_profile": true,
+    "cal_bins": {
+      "1": 0.019372662529349,
+      "2": 0.078766912221908,
+      "4": 0.20551748573780002,
+      "8": 0.502185761928558,
+      "16": 0.653296768665313
+    }
+  },
+  {
+    "name": "profile_cal_tau0.3",
+    "use_profile": true,
+    "cal_bins": {
+      "1": 0.012026917189359,
+      "2": 0.037668488919734004,
+      "4": 0.070233643054962,
+      "8": 0.137069627642631,
+      "16": 0.297690451145172
+    }
+  },
+  {
+    "name": "profile_audit_soft",
+    "use_profile": true,
+    "threshold": 0.5,
+    "audit_soft": {
+      "milestones": [
+        4,
+        8,
+        16
+      ],
+      "founder_t": 0.05,
+      "loo_t": 0.5
+    }
+  }
+]

@@ -1,0 +1,10 @@
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<01:30,  3.72it/s]Loading weights:   5%|▌         | 18/339 [00:00<00:05, 58.76it/s]Loading weights:  12%|█▏        | 41/339 [00:00<00:02, 113.41it/s]Loading weights:  19%|█▉        | 65/339 [00:00<00:01, 145.95it/s]Loading weights:  26%|██▌       | 87/339 [00:00<00:01, 160.71it/s]Loading weights:  33%|███▎      | 112/339 [00:00<00:01, 183.05it/s]Loading weights:  39%|███▉      | 132/339 [00:00<00:01, 187.86it/s]Loading weights:  45%|████▍     | 152/339 [00:01<00:01, 185.41it/s]Loading weights:  51%|█████▏    | 174/339 [00:01<00:00, 186.65it/s]Loading weights:  58%|█████▊    | 197/339 [00:01<00:00, 198.21it/s]Loading weights:  65%|██████▍   | 220/339 [00:01<00:00, 188.40it/s]Loading weights:  72%|███████▏  | 245/339 [00:01<00:00, 204.21it/s]Loading weights:  79%|███████▉  | 267/339 [00:01<00:00, 208.50it/s]Loading weights:  86%|████████▌ | 291/339 [00:01<00:00, 208.08it/s]Loading weights:  92%|█████████▏| 313/339 [00:01<00:00, 210.64it/s]Loading weights:  99%|█████████▉| 335/339 [00:01<00:00, 203.79it/s]Loading weights: 100%|██████████| 339/339 [00:01<00:00, 176.25it/s]
+loaded Qwen/Qwen2.5-7B-Instruct v3 5 s
+yes ids [7414, 9454, 9693, 9834, 14004, 14080] no ids [902, 2152, 2308, 2753, 5664, 8996]
+prompts 10906 tokens 1329145 max 529
+2048 scored 13 s
+4032 scored 18 s
+6016 scored 23 s
+8000 scored 29 s
+10048 scored 36 s
+FINISHED Qwen/Qwen2.5-7B-Instruct v3 10906 46 s
