@@ -45,7 +45,8 @@ Ground truth comes from registry identifiers: French SIREN numbers in [FOPPA v1.
 │   ├── raw/                model inputs and all model outputs (~224 MB)
 │   └── derived/            summary tables; FINDINGS*.md document each track
 ├── generated/              numbers.tex (all 654 numbers in the paper as LaTeX macros) and table bodies
-└── figures/                Fig. 1, Fig. 2, Fig. S1 (PDF and PNG)
+├── figures/                Fig. 1, Fig. 2, Fig. S1 (PDF and PNG)
+└── supplement.pdf          online supplement cited in the paper: Tables S1–S18, Fig. S1, verbatim prompts
 ```
 
 ## Quick start: rebuild every number without a GPU
