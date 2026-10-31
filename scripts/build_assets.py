@@ -641,7 +641,7 @@ for ax, m in zip(axes, MODELS):
         r = MI[(MI.model == m) & (MI.variant == v)].iloc[0]
         ax.scatter(r.fmr, r.recall, marker=mk, s=11, facecolors="white", edgecolors="0.25", linewidths=.6, zorder=4)
     a1, a16 = c.auc.iloc[0], c.auc.iloc[-1]
-    ax.text(.97, .04, f"AUC {a1:.2f} → {a16:.2f}", transform=ax.transAxes, ha="right", va="bottom", fontsize=5.6, color="0.25")
+    ax.text(.97, .04, f"AUC {a1:.2f} → {a16:.2f}", transform=ax.transAxes, ha="right", va="bottom", fontsize=6.5, color="0.25")
     ax.set_xlim(0, 1); ax.set_ylim(0, 1); ax.set_aspect("equal"); ax.set_xticks([0, .5, 1]); ax.set_yticks([0, .5, 1])
     ax.set_xticklabels(["0", ".5", "1"]); ax.set_title(SHORT[m], fontsize=7, pad=3)
     ax.grid(color=GRIDC, lw=.4); ax.set_axisbelow(True)
@@ -663,11 +663,11 @@ ends = []
 for m in MODELS:
     c = C[C.model == m].sort_values("k"); ex = 100 * (c.fmr - c.fmr_or)
     ax.plot(c.k, ex, marker=MKM[m], ls="-", color=COL[m], ms=2.6, lw=1.1, zorder=2); ends.append(ex.iloc[-1])
-for m, v in zip(MODELS, repel(ends, 2.4)):
-    ax.text(17.5, v, SHORT[m], fontsize=5.6, color=COL[m], ha="left", va="center")
+for m, v in zip(MODELS, repel(ends, 2.7)):
+    ax.text(17.5, v, SHORT[m], fontsize=6.3, color=COL[m], ha="left", va="center")
 ax.set_xscale("log", base=2); ax.set_xticks(KS); ax.set_xticklabels([str(k) for k in KS]); ax.minorticks_off()
 ax.set_xlim(0.85, 40); ax.set_ylim(-8, 25); ax.set_xlabel("profile size $k$"); ax.set_ylabel("profile minus OR null (points)")
-ax.text(0.03, 0.97, "above 0: the profile accepts negatives\nthat no single member supports", transform=ax.transAxes, fontsize=5.6, color="0.4", va="top")
+ax.text(0.03, 0.97, "above 0: the profile accepts negatives\nthat no single member supports", transform=ax.transAxes, fontsize=6.3, color="0.4", va="top")
 ax.set_title("Excess over the OR null", loc="left"); letter(ax, "a")
 def slope(ax, L, R, labels, gap, lab_l, lab_r, fmt="{:.0f}", ylim=None, delta=False):
     for i in range(len(L)):
@@ -676,21 +676,21 @@ def slope(ax, L, R, labels, gap, lab_l, lab_r, fmt="{:.0f}", ylim=None, delta=Fa
         ax.scatter([0, 1], [L[i], R[i]], color=colr, s=16, zorder=3, edgecolors="white", linewidths=.6)
     for i, v in enumerate(repel(R, gap)):
         txt = f"{fmt.format(R[i])}  {labels[i]}" + (f" ({R[i] - L[i]:+.0f})" if delta else "")
-        ax.text(1.08, v, txt, fontsize=5.6, color=UP if R[i] > L[i] else DOWN, ha="left", va="center")
+        ax.text(1.08, v, txt, fontsize=6.3, color=UP if R[i] > L[i] else DOWN, ha="left", va="center")
     for i, v in enumerate(repel(L, gap)):
-        ax.text(-0.08, v, fmt.format(L[i]), fontsize=5.6, color="0.35", ha="right", va="center")
+        ax.text(-0.08, v, fmt.format(L[i]), fontsize=6.3, color="0.35", ha="right", va="center")
     ax.set_xticks([0, 1]); ax.set_xticklabels([lab_l, lab_r], fontsize=6.3); ax.set_xlim(-0.35, 2.15)
     if ylim: ax.set_ylim(*ylim)
     ax.spines["bottom"].set_visible(False); ax.tick_params(axis="x", length=0)
     ax.grid(axis="y", color=GRIDC, lw=.5); ax.set_axisbelow(True)
 # (b) confident false matches
 cf = CF.set_index("model").loc[MODELS]
-slope(axes[1], 100 * cf.best_single16.values, 100 * cf.profile16.values, [SHORT[m] for m in MODELS], 2.6,
+slope(axes[1], 100 * cf.best_single16.values, 100 * cf.profile16.values, [SHORT[m] for m in MODELS], 2.9,
       "most similar\nmember", "whole\nprofile", ylim=(-1.5, 35))
 axes[1].set_ylabel("% of hard negatives"); axes[1].set_title("P(YES) > 0.99 at $k$=16", loc="left"); letter(axes[1], "b")
 # (c) contamination by one false merge
 c4 = CO[CO.k == 4].set_index("model").loc[MODELS]
-slope(axes[2], 100 * c4.clean.values, 100 * c4.contaminated.values, [SHORT[m] for m in MODELS], 3.6,
+slope(axes[2], 100 * c4.clean.values, 100 * c4.contaminated.values, [SHORT[m] for m in MODELS], 4.0,
       "clean:\n4 verified", "contaminated:\n3 verified + intruder", ylim=(0, 72), delta=True)
 axes[2].set_ylabel("% of second records accepted"); axes[2].set_title("One false merge ($k$=4)", loc="left"); letter(axes[2], "c")
 fig.tight_layout(w_pad=1.0); fig.savefig(f"{FIG}/fig2_mitigation_snowball.pdf"); fig.savefig(f"{FIG}/fig2_mitigation_snowball.png", dpi=300); plt.close(fig)
